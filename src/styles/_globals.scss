@@ -1,0 +1,28 @@
+:root{
+
+}
+
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+html{
+    block-size: 100%;
+    inline-size: 100%;
+}
+
+body{
+    min-block-size: 100%;
+    min-inline-size: 100%;
+    
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+     
+    @include for-size(phone-only) {    
+        background-color: black;
+    }
+}
