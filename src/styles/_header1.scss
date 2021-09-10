@@ -1,0 +1,209 @@
+.header{
+  inline-size: 100%;
+  background-color: var(--Very-light-red) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  block-size: 37.5rem;
+
+  &__wrapper{
+    inline-size: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: flex-start;
+    block-size: 100%;
+  }
+
+  &__logo{
+    block-size: 40px;
+
+    img{
+      max-block-size: 100%;
+    }
+  }
+
+  &__navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    padding-inline: 1.5rem;
+    padding-block-start: 3.5rem;
+    inline-size: 100%;
+    max-inline-size: 68.75rem;
+
+    @include desktop{
+      padding-block-start: 3.6875rem;
+    }
+
+    &__mobile{
+
+      @include desktop{
+        display: none;
+      }
+    }
+  }
+}
+
+.nav{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include desktop{
+    block-size: 40px;
+  }
+
+  &.mobile{
+    @include mobile{
+      position: absolute;
+      top: 7.8125rem;
+      left: 1.5rem;
+      background-color: white;
+      right: 1.5rem;
+      flex-direction: column;
+    }
+  }
+
+  li{
+    display: block;
+    transition-duration: 0.5s;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    &:focus-within{
+      a{
+        //outline: none;
+      }
+    }
+  }
+
+  &__submenu{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    
+
+    @include mobile{
+      color: white;
+      flex-direction: column;
+      padding: 1.5rem;
+      inline-size: 100%;
+    }
+
+    @include desktop{
+      block-size: 40px;
+      gap: 2rem;
+    }
+  }
+
+
+  &__submenu > li{
+    position: relative;
+    block-size: 100%;
+    @include mobile{
+      inline-size: 100%;
+    }
+
+    & > a{
+      block-size: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: black;
+
+      @include mobile{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1.5rem;
+      }
+      
+      @include desktop{
+        color: white;
+
+        &::after{
+          content: '';
+          position: absolute;
+          block-size: 2px;
+          inline-size: 100%;
+          left: 0;
+          bottom: 7px;
+
+          background-color: white;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 200ms ease;
+        }
+
+        &:hover{
+          &::after{
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    &:hover, &:focus-within{
+      ul{
+        visibility: visible;
+        opacity: 1;
+        display: block;
+
+        transform: scaleY(1);
+        transition: transform 300ms ease;
+      }
+    }
+  }
+
+
+  &__submenu > li > ul{
+    visibility: hidden;
+    opacity: 0;
+    display: none; 
+
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 300ms ease;
+    border-radius: 5px;
+
+    @include mobile{
+      background-color: #979797;
+      width: 100%;
+    }
+
+    @include desktop{
+      position: absolute;
+      transition: all 0.5s ease;
+      top: 2.5rem;
+      left: -1.5rem;
+      inline-size: 168px;
+      background-color: white;
+      padding: 1.5rem;
+    }
+
+
+    a{
+      font-size: .9375rem;
+      line-height: 2.0625rem;
+      color: var(--Very-dark-gray-blue);
+      font-size: 400;
+
+      @include mobile{
+        inline-size: 100%;
+        color: white;
+        display: flex;
+        justify-content: center ;
+      }
+
+      &:hover{
+        font-weight: 700;
+      }
+    }
+
+    & > li{
+      width: 100%;
+    }
+  }
+}

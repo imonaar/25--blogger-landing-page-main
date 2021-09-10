@@ -1,28 +1,97 @@
 :root{
-
+  --Light-red-CTA-text: hsl(356, 100%, 66%);
+  --Very-light-red-CTA-hover-background: hsl(355, 100%, 74%);
+  --Very-dark-blue-headings: hsl(208, 49%, 24%);
+  
+  --White-text: hsl(0, 0%, 100%);
+  --Grayish-blue-foote-text: hsl(240, 2%, 79%);
+  --Very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
+  --Very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
+  
+  //Background gradient - Intro/CTA mobile nav: 
+  --Very-light-red: hsl(13, 100%, 72%);
+  --Light-red: hsl(353, 100%, 62%);
+  
+  //Background gradient - body:
+  --Very-dark-gray-blue: hsl(237, 17%, 21%);
+  --Very-dark-desaturated-blue: hsl(237, 23%, 32%);
 }
 
 *,*::before, *::after{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 html{
-    block-size: 100%;
-    inline-size: 100%;
+  block-size: 100%;
+  inline-size: 100%;
 }
 
 body{
-    min-block-size: 100%;
-    min-inline-size: 100%;
-    
-    margin: 0;
-    padding: 0;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  
+  margin: 0;
+  padding: 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: red;
-     
-    @include for-size(phone-only) {    
-        background-color: black;
-    }
+  max-inline-size: 90rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--White-text);
+
+  font-size: 1rem;
+
+  font-family: 'Overpass', sans-serif;
+  
 }
+
+.content{
+  inline-size: 100%;
+}
+
+h1, h2, h3, h4, a{
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+}
+
+ul, li{
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  font-weight: 600;
+  font-family: 'Overpass', sans-serif;
+}
+
+.open{
+  transform: scale(1);
+}
+
+.btn{
+  border: 0;
+  background: none;
+  font-size: 1.125rem;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: 'Overpass', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+
+  @include desktop{
+    font-size: 1rem;
+    line-height: 15px;
+  }
+
+  &-signup{
+    color: white;
+    padding: .9375rem 2.5rem;
+    background: linear-gradient(135deg, var(--Very-light-red), var(--Light-red));
+    border-radius: 28px;
+  }
+}
+
