@@ -39,6 +39,8 @@ body{
   align-items: center;
   color: var(--White-text);
 
+  overflow-x: hidden;
+
   font-size: 1rem;
 
   font-family: 'Overpass', sans-serif;
@@ -47,9 +49,15 @@ body{
 
 .content{
   inline-size: 100%;
+  display: grid;
+  gap: 6.25rem;
+
+  @include desktop{
+    gap: 9.375rem;
+  }
 }
 
-h1, h2, h3, h4, a{
+h1, h2, h3, h4,h5, a{
   margin: 0;
 }
 

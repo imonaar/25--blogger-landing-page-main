@@ -1,0 +1,277 @@
+.main{
+  inline-size: 100%;
+  color: var(--Very-dark-grayish-blue-body-copy);
+
+  &__wrapper{
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include mobile{
+      gap: 6.25rem;
+    }
+   
+    @include desktop{
+      gap: 16.375rem;
+    }
+  }
+
+  &__future__wrapper{
+    inline-size: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__future{
+    inline-size: 100%;
+    max-inline-size: 79.6875rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.375rem;
+    padding-inline: 1.5rem;
+
+    @include desktop{
+      padding-inline: 0;
+      gap: 5.8125rem;
+    }
+  }
+
+  &__future__content{
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.875rem;
+
+    @include desktop{
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      gap: 125px;
+    }
+
+    &__details{
+      inline-size: 100%;
+      max-inline-size: 33.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      text-align: center;
+
+      @include desktop{
+        text-align: left;
+        gap: 4rem;
+      }
+
+      h3{
+        margin-block-end: 1rem;
+        font-size: 1.75rem;
+        line-height: 2rem;
+        padding-inline: 1rem;
+        font-weight: 600;
+
+        @include desktop{
+          line-height: 1.75rem;
+          padding: 0;
+        }
+      }
+
+      p{
+        font-size: 1rem;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+      }
+
+    }
+
+    &__image{
+      inline-size: 100%;
+      //max-inline-size: 38.125rem;
+      block-size: 20.375rem;
+      background-image: url('../../images/illustration-editor-mobile.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include desktop{
+        block-size: 26.6875rem;
+        position: relative;
+        background-image: none;
+
+        &::before{
+          content: '';
+          position: absolute;
+          top: -56%;
+          left: 0;
+          inline-size: 880px;
+          block-size: 880px;
+          background-image: url('../../images/illustration-editor-desktop.svg');
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  &__state{
+    padding-inline: 1.5rem;
+    border-radius: 0px 100px;
+    color: white;
+    position: relative;
+    background-image: url('../../images/bg-pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-position: center -260px;
+    background-size: cover;
+
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #2D2E40 0%, #3F4164 100%);
+      border-radius: 0px 100px;
+      z-index: -1;
+    }
+
+    @include mobile{
+      margin-top: 10.8125rem;
+      padding-block-end: 6.8125rem;
+    }
+
+    @include desktop{
+      display: flex;
+      justify-content: center;
+      gap: 98px;
+      block-size: 400px;
+
+      background-size: 70%;
+      background-position: -210px -500px;
+    }
+
+    &__image{
+      background-image: url('../../images/illustration-phones.svg');
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      
+      @include desktop{
+        inline-size: 100%;
+        max-inline-size: 29.5rem;
+        height: 31.25rem;
+        transform: translateY(-3.125rem);
+        background-size: 100% 110%;
+        background-position: center 0;
+      }
+
+      @include mobile{
+        position: absolute;
+        left: 1.5rem;
+        right: 1.5rem;
+        top: 0;
+        transform: translateY(-50%);
+        block-size: 21.6875rem;
+      }
+    }
+
+    &__content{
+      text-align: center;
+      inline-size: 100%;
+      max-inline-size: 33.75rem;
+
+      @include mobile{
+        margin-top: 221px;
+      }
+
+      @include desktop{
+        padding-block: 6.9375rem;
+      }
+
+      h4{
+        font-size: 40px;
+        line-height: 61px;
+        margin-bottom: .625rem;
+      }
+
+      p{
+        font-size: 1rem;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  &__free{
+    inline-size: 100%;
+    max-inline-size: 81.1875rem;
+    padding-block-end: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.875rem;
+    padding-inline: 1.5rem;
+    margin-top: -1.3125rem;
+
+    @include desktop{
+      flex-direction: row;
+      gap: 125px;
+      block-size: 49.125rem;
+      align-items: center;
+      padding-inline: 0;
+      margin-top: -12rem;
+    }
+
+    &__wrapper{
+      inline-size: 100%;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    &__image{
+      background: url('../../images/illustration-laptop-mobile.svg');
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      block-size: 20.375rem;
+      inline-size: 100%;
+
+      @include desktop{
+        block-size: 100%;
+        background-image: url('../../images/illustration-laptop-desktop.svg');
+        background-position: right center;
+        background-size: cover;
+      }
+    }
+
+    &__content{
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+      inline-size: 100%;
+      max-inline-size: 33.75rem;
+      
+
+      @include desktop{
+        text-align: left;
+      }
+
+      h5{
+        font-size: 1.75rem;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      p{
+        font-size: 1rem;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
