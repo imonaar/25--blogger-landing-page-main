@@ -1,0 +1,76 @@
+.footer{
+  background-color: var(--Very-dark-black-blue-footer-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 4.6875rem;
+  border-radius: 0px 100px 0px 0px;
+
+  @include desktop{
+    padding-block: 4.375rem;
+  }
+  &__wrapper{
+    inline-size: 100%;
+    max-inline-size: 1110px;
+    display: grid;
+
+    @include mobile{
+      gap: 4.5rem;
+    }
+
+    @include desktop{
+      grid-template-columns: 12.375rem 1fr ;
+    }
+  }
+
+  &__content{
+    display: grid;
+    gap: 2.5rem;
+
+    @include desktop{
+      grid-template-columns: 1fr 1fr 1fr ;
+    }
+  }
+
+  &__logo{
+    @include mobile{
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  h6{
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: .9375rem;
+    line-height: 33px;
+    margin-bottom: 1.3125rem;
+
+    @include desktop{
+      text-align: left;
+    }
+  }
+
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include desktop{
+      justify-content: flex-start;
+    }
+
+    & > a{
+      font-size: .9375rem;
+      line-height: 33px;
+      font-weight: 400;
+      font-family: 'Ubuntu', sans-serif;
+    }
+  }
+}
