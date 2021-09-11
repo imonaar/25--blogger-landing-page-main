@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   block-size: 37.5rem;
+  border-bottom-left-radius: 100px;
 
   &__wrapper{
     inline-size: 100%;
@@ -14,7 +15,13 @@
     flex-direction: column;
     align-items: center;
 
+    gap: 6.75rem;
+
     padding-block-start: 56px;
+
+    @include desktop{
+      gap: 8.25rem;
+    }
   }
 
   &__logo{
@@ -116,13 +123,14 @@
           justify-content: center;
           color: var(--Very-dark-blue-headings);
         }
-  
-        &:hover{
-          & + ul{
-            display: block;
-            opacity: 1;
-            transform: scaleY(1);
-          }
+
+      }
+
+      &:hover{
+         ul{
+          display: block;
+          opacity: 1;
+          transform: scaleY(1);
         }
       }
     }
@@ -232,6 +240,39 @@
 
     @include desktop{
       display: none;
+    }
+  }
+
+  &__hero{
+    inline-size: 100%;
+    max-inline-size: 57.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    &__content{
+      text-align: center;
+
+      h1{
+        font-size: clamp(2.25rem, 1.6338rem + 2.6291vw, 4rem);
+        line-height: clamp(3.43rem, 2.4811rem + 4.0488vw, 6.125rem);
+        font-weight: 600;
+        font-family: 'Overpass', sans-serif;
+      }
+
+      p{
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 300;
+      }
+    }
+
+    &__buttons{
+      inline-size: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
     }
   }
 }

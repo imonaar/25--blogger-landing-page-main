@@ -50,7 +50,10 @@ body{
 }
 
 h1, h2, h3, h4, a{
-  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+}
+
+p{
   margin: 0;
 }
 
@@ -65,7 +68,7 @@ a{
   color: white;
   margin: 0;
   font-weight: 600;
-  font-family: 'Overpass', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .open{
@@ -81,6 +84,7 @@ a{
   font-family: 'Overpass', sans-serif;
   cursor: pointer;
   white-space: nowrap;
+  border-radius: 28px;
 
   @include desktop{
     font-size: 1rem;
@@ -91,7 +95,36 @@ a{
     color: white;
     padding: .9375rem 2.5rem;
     background: linear-gradient(135deg, var(--Very-light-red), var(--Light-red));
-    border-radius: 28px;
+  }
+
+  &__hero{
+    line-height: 18px;
+    white-space: nowrap;
+    border: 1px solid white; 
+    transition: all 300ms ease;
+
+    &-start{
+      color: #FF505C;
+      background-color: white;
+      padding: .9375rem 1rem;
+
+      &:hover{
+        color: white;
+        background-color: #FF7B86;
+        border-color: #FF7B86;
+      }
+    }
+
+    &-learn{
+      background-color: transparent;
+      color: white;
+      padding: .9375rem 1.5rem;
+
+      &:hover{
+        background-color: white;
+        color: #FF7B86;
+      }
+    }
   }
 }
 
