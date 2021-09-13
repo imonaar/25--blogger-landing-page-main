@@ -122,15 +122,16 @@
           inline-size: 100%;
           justify-content: center;
           color: var(--Very-dark-blue-headings);
+          font-family: 'Overpass', sans-serif;
         }
-
       }
 
-      &:hover{
+      &:hover, &:focus-within{
          ul{
           display: block;
           opacity: 1;
           transform: scaleY(1);
+          transition: all 1000ms ease;
         }
       }
     }
@@ -145,9 +146,11 @@
       gap: .75rem;
 
       opacity: 0;
-      display: none;
+      
       transform: scaleY(0);
-      transition: transform 300ms ease;
+      transition: all 1000ms ease;
+      transform-origin: top;
+      display: none;
 
       @include mobile{
         background-color: #979797;
@@ -173,9 +176,18 @@
         font-size: 1rem;
         line-height: 28px;
 
+        @include mobile{
+          font-family: 'Overpass', sans-serif;
+        }
+
         @include desktop{
           justify-content: flex-start;
           color: #2D2E40;
+          font-weight: 400;
+
+          &:hover{
+            font-weight: 700;
+          }
         }
       }
       
@@ -241,7 +253,11 @@
 
     border: none;
     background: none;
-    cursor: pointer;   
+    cursor: pointer;  
+    
+    @include desktop{
+      display: none;
+    }
 
     div{
       block-size: 3px;
