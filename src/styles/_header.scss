@@ -259,7 +259,8 @@
       display: none;
     }
 
-    div{
+    span{
+      display: block;
       block-size: 3px;
       inline-size: 1.6rem;
       background-color: white;
@@ -290,7 +291,7 @@
 
     &.close{
 
-      div{
+      span{
         background-color: transparent;
         &::before{
           transform: translateY(0) rotate(-45deg);
