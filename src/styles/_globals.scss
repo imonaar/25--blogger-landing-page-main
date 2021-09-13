@@ -101,10 +101,32 @@ a{
     line-height: 15px;
   }
 
+  &-signin{
+    @include desktop{
+      color: white;
+    }
+  }
+
   &-signup{
     color: white;
     padding: .9375rem 2.5rem;
+    transition: all 300ms ease;
     background: linear-gradient(135deg, var(--Very-light-red), var(--Light-red));
+
+
+    @include desktop{
+      color: #FF505C;
+      background: white;
+    }
+
+    &:hover{
+      @include desktop{
+        color: white;
+        background: #FF7B86;
+        transition: all 300ms ease;
+      }
+
+    }
   }
 
   &__hero{

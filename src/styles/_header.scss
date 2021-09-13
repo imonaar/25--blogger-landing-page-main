@@ -156,7 +156,7 @@
       @include desktop{
         position: absolute;
         left: -1.5rem;
-        top: 40px;
+        top: 100%;
         inline-size: 168px;
         background-color: white;
         padding-inline: 1.5rem;
@@ -198,51 +198,6 @@
     }
   }
 
-  &__hamburger{
-    block-size: 100%;
-    inline-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    border: 0;
-    background: none;
-    cursor: pointer;
-
-    img{
-      position: absolute;
-
-      &.open{
-        opacity: 1;
-        transition: opacity 300ms ease;
-      }
-
-      &.close{
-        opacity: 0;
-        transition: opacity 300ms ease;
-      }
-    }
-
-    &.close{
-      img{
-        &.open{
-          opacity: 0;
-          transition: opacity 300ms ease;
-        }
-  
-        &.close{
-          opacity: 1;
-          transition: opacity 300ms ease;
-        }
-      }
-    }
-
-    @include desktop{
-      display: none;
-    }
-  }
-
   &__hero{
     inline-size: 100%;
     max-inline-size: 57.5rem;
@@ -273,6 +228,63 @@
       display: flex;
       justify-content: center;
       gap: 1rem;
+    }
+  }
+
+  &__hamburger{
+    block-size: 100%;
+    inline-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: none;
+    cursor: pointer;   
+
+    div{
+      block-size: 3px;
+      inline-size: 1.6rem;
+      background-color: white;
+      position: relative;
+      transition: all 300ms ease;
+
+      &::before, &::after{
+        content: '';
+        height: 3px;
+        position: absolute;
+        inline-size: inherit;
+        background-color: white;
+        border-radius: 3px;
+        left: 0;
+        transition: all 300ms ease;
+
+      }
+
+      &::before{
+        transform: translateY(-7px);
+      }
+
+      &::after{
+        transform: translateY(7px);
+      }
+
+    }
+
+    &.close{
+
+      div{
+        background-color: transparent;
+        &::before{
+          transform: translateY(0) rotate(-45deg);
+        }
+
+        &::after{
+          transform: translateY(0) rotate(45deg);
+        }
+      }
+
     }
   }
 }
